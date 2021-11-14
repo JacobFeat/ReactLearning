@@ -24,7 +24,6 @@ export default function App() {
       ...inputValue,
       [e.target.name]: e.target.value
     });
-    console.log(e.target.name);
   };
 
   const handleSubmit = (e) => {
@@ -33,7 +32,6 @@ export default function App() {
       name: `${inputValue.name} ${inputValue.surname} aka ${inputValue.nickname}`
     };
     setUsers([newUser, ...users]);
-    console.log(inputValue);
   };
 
   const deleteUser = (name) => {
@@ -41,7 +39,6 @@ export default function App() {
       return user.name !== name;
     });
     setUsers(filteredUser);
-    // console.log(users[0].name);
   };
 
   return (
