@@ -29,7 +29,7 @@ export const students = [
   },
   {
     id: "5",
-    name: "Paweł Andrzejewski",
+    name: "Adam Romański",
     attendance: "29%",
     average: "2.4",
     group: "A"

@@ -29,14 +29,14 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newUser = {
-      name: `${inputValue.name} ${inputValue.surname} aka ${inputValue.nickname}`
+      name: `${inputValue.name} "${inputValue.nickname}" ${inputValue.surname} `
     };
     setUsers([newUser, ...users]);
   };
 
-  const deleteUser = (name) => {
+  const deleteUser = (id) => {
     const filteredUser = users.filter((user) => {
-      return user.name !== name;
+      return user.id !== id;
     });
     setUsers(filteredUser);
   };
@@ -77,8 +77,10 @@ export default function App() {
         <input type="submit" value="Check" />
       </Wrapper>
       <ul>
-        {users.map(({ name }) => (
-          <li onClick={() => deleteUser(name)}>{name}</li>
+        {users.map(({ id, name }) => (
+          <li key={id.toString()} onClick={() => deleteUser(id)}>
+            {name}
+          </li>
         ))}
       </ul>
     </div>
